@@ -2,7 +2,13 @@ let myLeads = []
 const inputBtn = document.getElementById("input-btn")
 let inputEl = document.getElementById("input-el")
 const ulEl = document.getElementById("ul-el")
+
 let leadsfromLocalStorage = JSON.parse( localStorage.getItem("myLeads") );
+
+if (leadsfromLocalStorage) {
+    myLeads = leadsfromLocalStorage
+    renderLeads()
+}
 
 inputBtn.addEventListener("click", function() {
     myLeads.push(document.getElementById("input-el").value)
